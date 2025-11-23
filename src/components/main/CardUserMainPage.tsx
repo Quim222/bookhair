@@ -32,7 +32,7 @@ export default function CardUserMainPage({ data }: { data: EmployeeUser }) {
           />
         )}
         <div className="flex flex-col mt-4 items-center justify-center gap-6">
-          <h2 className="font-bold dark:text-white">{data.name}</h2>
+          <h2 className="font-bold text-black dark:text-white">{data.name}</h2>
           <div className="flex gap-4 items-center">
             <FaInstagram className="text-gray-600 dark:text-gray-300 w-8 h-8" />
             <FaFacebook className="text-gray-600 dark:text-gray-300 w-8 h-8" />

@@ -26,11 +26,11 @@ export default function AboutSection() {
           </div>
 
           {/* Coluna de texto */}
-          <div className="order-1 md:order-2">
-            <span className="inline-block rounded-full border px-3 py-1 text-xs tracking-wide border-gold">
+          <div className="order-1 md:order-2 text-center">
+            <span className="inline-block rounded-full text-black border px-3 py-1 text-xs tracking-wide border-gold dark:border-gold-dark dark:text-gold-dark">
               SOBRE NÓS
             </span>
-            <h2 className="mt-3 text-3xl font-semibold leading-tight md:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold  leading-tight md:text-4xl">
               Um espaço pensado para te receber bem — e saíres ainda melhor.
             </h2>
 
@@ -51,13 +51,13 @@ export default function AboutSection() {
 
             {/* Badges de valor */}
             <div className="mt-6 flex flex-wrap gap-3 text-sm">
-              <span className="rounded-full border px-3 py-1 border-gold">
+              <span className="rounded-full border px-3 py-1 text-black border-gold dark:text-white">
                 Consultoria personalizada
               </span>
-              <span className="rounded-full border px-3 py-1 border-gold">
+              <span className="rounded-full border px-3 py-1 text-black border-gold dark:text-white">
                 Produtos profissionais
               </span>
-              <span className="rounded-full border px-3 py-1 border-gold">
+              <span className="rounded-full border px-3 py-1 text-black border-gold dark:text-white">
                 Técnicas atuais
               </span>
             </div>

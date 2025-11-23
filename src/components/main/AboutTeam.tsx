@@ -67,7 +67,7 @@ export default function AboutTeam() {
     relative scroll-auto shadow-lg p-6 bg-gray-50 dark:bg-zinc-900/80 backdrop-blur-xl">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="text-center mb-12">
-          <span className="inline-block rounded-full border px-3 py-1 text-xs tracking-wide mb-10 border-gold dark:border-gold-dark dark:text-gold-dark">
+          <span className="inline-block text-black rounded-full border px-3 py-1 text-xs tracking-wide mb-10 border-gold dark:border-gold-dark dark:text-gold-dark">
             NOSSA EQUIPA
           </span>
           <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">

@@ -35,10 +35,10 @@ export default function AboutServices() {
     >
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="text-center mb-16">
-          <span className="inline-block rounded-full border px-3 py-1 text-xs tracking-wide border-gold dark:text-gold-dark">
+          <span className="inline-block rounded-full text-black border px-3 py-1 text-xs tracking-wide border-gold dark:border-gold-dark dark:text-gold-dark">
             NOSSOS SERVIÇOS
           </span>
-          <h2 className="mt-3 text-3xl font-semibold leading-tight md:text-4xl">
+          <h2 className="mt-3 text-3xl text-gray-900 dark:text-white font-semibold leading-tight md:text-4xl">
             Serviços que oferecemos para realçar a sua beleza.
           </h2>
           <p className="mt-4 text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto">

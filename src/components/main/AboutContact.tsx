@@ -13,10 +13,10 @@ export default function AboutContact() {
     >
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="text-center mb-12">
-          <span className="inline-block rounded-full border border-gold px-3 py-1 text-xs tracking-wide mb-10 dark:border-gold-dark dark:text-gold-dark">
+          <span className="inline-block rounded-full text-black border border-gold px-3 py-1 text-xs tracking-wide mb-10 dark:border-gold-dark dark:text-gold-dark">
             CONTACTO
           </span>
-          <h2 className="text-3xl font-semibold leading-tight">
+          <h2 className="text-3xl text-gray-900 dark:text-white font-semibold leading-tight">
             Onde Estamos & Como Contactar
           </h2>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
@@ -30,8 +30,9 @@ export default function AboutContact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Cartão: Contacto */}
           <div className="rounded-2xl border border-zinc-200/70 dark:border-zinc-800 p-6 bg-white dark:bg-zinc-900 shadow-sm">
-            <h3 className="text-xl font-semibold mb-4">Fale Connosco</h3>
-
+            <h3 className="text-xl font-semibold mb-4 text-black dark:text-gold-dark">
+              Fale Connosco
+            </h3>
             <div className="space-y-3 text-zinc-700 dark:text-zinc-200">
               <p>
                 <span className="font-bold">Telefone:</span>{" "}
@@ -104,7 +105,8 @@ export default function AboutContact() {
               />
             </div>
             <div className="p-4 text-sm text-zinc-600 dark:text-zinc-300">
-              * Visualização do mapa com base na morada. Clique em “Abrir no Google Maps” para navegação.
+              * Visualização do mapa com base na morada. Clique em “Abrir no
+              Google Maps” para navegação.
             </div>
           </div>
         </div>
