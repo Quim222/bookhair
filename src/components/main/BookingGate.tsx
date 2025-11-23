@@ -19,7 +19,6 @@ export default function BookingGate({
 }: Props) {
   const [open, setOpen] = useState(false);
   const [dontShow, setDontShow] = useState(false);
-  const router = useRouter();
   useEffect(() => {
     if (typeof window !== "undefined") {
       const skip = localStorage.getItem(storageKey);

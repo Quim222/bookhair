@@ -55,7 +55,6 @@ export default function ModalAppointment() {
   }, [users, clientQuery]);
 
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
   useEffect(() => {

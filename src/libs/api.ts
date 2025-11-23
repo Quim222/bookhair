@@ -55,7 +55,7 @@ export async function apiFetch(
   return res;
 }
 
-export async function apiFetchJson<T = any>(
+export async function apiFetchJson<T = unknown>(
   path: string,
   init?: RequestInit & { noAuth?: boolean }
 ): Promise<T> {

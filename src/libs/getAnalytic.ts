@@ -32,7 +32,7 @@ export async function getAnalytic(user:User|null, days?:number) {
             return {href ,name:item.name};
         });
 
-    const results: {name: string, data: any}[] = [];
+    const results: {name: string, data: unknown}[] = [];
 
     await Promise.all(urlFilter.map(async (item) => {
 
