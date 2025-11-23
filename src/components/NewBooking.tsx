@@ -349,7 +349,7 @@ export default function NewBooking({ open, onClose, dashboard, date: initialDate
             ))}
 
           {/* Guest quick form */}
-          {canManageClients && isGuest && (
+          {isGuest && (
             <div className="relative space-y-3 mt-10 mb-10">
               <div>
                 <label htmlFor="nameClient" className="text-sm font-medium text-gray-700 dark:text-[#EDEFF4]">
