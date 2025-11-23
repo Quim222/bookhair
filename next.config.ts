@@ -3,22 +3,32 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: false,
+
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "8080",
-        pathname: "/photosUser/**", // cobre /photosUser/user/:id e /photosUser/service/:id
-      },
-      // opcional, caso uses 127.0.0.1 nalgum sítio
-      {
-        protocol: "http",
-        hostname: "127.0.0.1",
-        port: "8080",
+        protocol: process.env.ASSETS_PROTOCOL_DEV ?? "http",
+        hostname: process.env.ASSETS_HOST_DEV ?? "localhost",
+        port: process.env.ASSETS_PORT_DEV ?? "8080",
         pathname: "/photosUser/**",
-      },
+      } as any,
+      ...(process.env.ASSETS_HOST
+        ? [{
+            protocol: process.env.ASSETS_PROTOCOL ?? "https",
+            hostname: process.env.ASSETS_HOST,
+            pathname: "/photosUser/**",
+          } as any]
+        : []),
     ],
+  },
+
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: `${process.env.NEXT_PUBLIC_API_URL}/:path*`,
+      },
+    ];
   },
 };
 
