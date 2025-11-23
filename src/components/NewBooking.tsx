@@ -113,7 +113,7 @@ export default function NewBooking({ open, onClose, dashboard, date: initialDate
       const guest = isGuest;
 
       const payload = {
-        employerId: data.get("employee"),
+        employeeId: data.get("employee"),
         serviceId: data.get("service"),
         startTime: `${dateStr}T${timeStr}:00`,
         ...(guest

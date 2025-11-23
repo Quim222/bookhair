@@ -91,7 +91,7 @@ export default function SlideOver({
                 <h2 className="truncate text-base font-semibold">{title}</h2>
                 <button
                   onClick={onClose}
-                  className="rounded-md border px-2 py-1 text-sm hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-800"
+                  className="rounded-md border px-2 py-1 text-sm text-black dark:text-white hover:bg-zinc-50  dark:border-white dark:hover:bg-white/10 transition"
                   aria-label="Fechar"
                 >
                   ✕

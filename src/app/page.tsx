@@ -87,8 +87,8 @@ export default function Home() {
               O seu salão de beleza moderno em Lagos
             </p>
             <p className="mt-2 text-base md:text-lg text-white/80">
-              Cortes de cabelo, coloração e tratamentos por profissionais
-              dedicados. Realce a sua beleza com estilo e confiança.
+              Cortes, coloração e tratamentos realizados por profissionais
+              dedicados. Realce a sua beleza com estilo, confiança e bem-estar.
             </p>
           </div>
 
