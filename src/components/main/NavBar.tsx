@@ -137,35 +137,104 @@ export default function NavBar({ active }: { active: string }) {
           {isOpen && (
             <motion.div
               id="mobile-nav"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.22, ease: "easeInOut" }}
-              className="
-                md:hidden 
-                border-t border-zinc-300 dark:border-zinc-800
-                bg-white/70 dark:bg-[#121316]/70
-                backdrop-blur-md
-                supports-[backdrop-filter]:bg-white/40
-              "
+              role="dialog"
+              aria-modal="true"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.18 }}
+              className="sm:hidden fixed inset-0 z-[60] flex"
             >
-              <div className="py-3 mt-5">
-                <ul className="flex flex-col gap-2 items-center">
-                  {links.map(({ label, ref }) => (
-                    <li key={label} className="relative group">
-                      <Link
-                        href={ref}
-                        className="w-full text-white text-left py-2 transition-colors group-hover:text-gold dark:group-hover:text-gold-dark"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+              {/* overlay escuro */}
+              <button
+                aria-label="Fechar menu"
+                onClick={() => setIsOpen(false)}
+                className="flex-1 bg-black/70 backdrop-blur-sm"
+              />
 
-                <div className="mt-3">
-                  <ThemeToggle />
+              {/* sheet lateral (direita) */}
+              <div className="w-[88%] max-w-[420px] h-full bg-[#0B0B0C] text-white shadow-2xl border-l border-white/10">
+                {/* header do sheet */}
+                <div className="flex items-center justify-between px-4 h-14 border-b border-white/10">
+                  <div className="flex items-center gap-2">
+                    <Image
+                      src="/logo-white.png"
+                      alt="Logo"
+                      width={28}
+                      height={28}
+                    />
+                    <span className="text-sm font-semibold">BookHair</span>
+                  </div>
+                  <button
+                    aria-label="Fechar menu"
+                    onClick={() => setIsOpen(false)}
+                    className="h-9 w-9 inline-flex items-center justify-center rounded-lg hover:bg-white/10"
+                  >
+                    <LuX size={20} />
+                  </button>
+                </div>
+
+                {/* conteúdo */}
+                <div className="p-6 space-y-8 overflow-y-auto h-[calc(100%-56px)]">
+                  {/* links */}
+                  <ul className="space-y-4">
+                    {links.map(({ label, ref }) => (
+                      <li key={label}>
+                        <Link
+                          href={ref}
+                          onClick={() => setIsOpen(false)}
+                          className="block text-lg leading-6 opacity-90 hover:opacity-100"
+                        >
+                          {label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="h-px bg-white/10" />
+
+                  {/* sessão */}
+                  <div className="flex flex-col gap-3">
+                    {user ? (
+                      <>
+                        <Link
+                          href="/dashboard"
+                          onClick={() => setIsOpen(false)}
+                          className="inline-flex items-center justify-center h-11 rounded-full
+                         bg-[var(--bh-gold,#D4AF37)] text-black font-medium"
+                        >
+                          Dashboard
+                        </Link>
+                        <button
+                          onClick={() => {
+                            logout();
+                            setIsOpen(false);
+                          }}
+                          className="inline-flex items-center justify-center h-11 rounded-full
+                         border border-white/25 text-white font-medium
+                         hover:bg-white/10"
+                        >
+                          Logout
+                        </button>
+                      </>
+                    ) : (
+                      <Link
+                        href="/login"
+                        onClick={() => setIsOpen(false)}
+                        className="inline-flex items-center justify-center h-11 rounded-full
+                       bg-[var(--bh-gold,#D4AF37)] text-black font-medium"
+                      >
+                        Login
+                      </Link>
+                    )}
+                  </div>
+
+                  <div className="h-px bg-white/10" />
+
+                  {/* toggle mais compacto */}
+                  <div className="flex items-center justify-between" aria-label="Alternar tema">
+                    <ThemeToggle />
+                  </div>
                 </div>
               </div>
             </motion.div>

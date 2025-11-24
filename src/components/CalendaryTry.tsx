@@ -32,6 +32,7 @@ type Props = {
   events: Record<string, Booking[]>;
   onClickDay?: (day: Date) => void;
   onFilteredChange?: (filtered: Booking[]) => void;
+  selectedDay?: string | null;
 };
 
 const WEEKDAYS = ["S", "T", "Q", "Q", "S"]; // seg–sex
@@ -41,11 +42,14 @@ export default function MonthCalendarDF({
   events,
   onClickDay,
   onFilteredChange,
+  selectedDay,
 }: Props) {
   const [cursor, setCursor] = useState<Date>(new Date());
   const [stylist, setStylist] = useState<string>("ALL");
   const [service, setService] = useState<string>("ALL");
   const [status, setStatus] = useState<string>("ALL");
+
+  const selectedKey = selectedDay ? format(selectedDay, "yyyy-MM-dd") : null;
 
   const stylistId = useId();
   const serviceId = useId();
@@ -277,7 +281,7 @@ export default function MonthCalendarDF({
           const outMonth = !isSameMonth(day, cursor);
           const today = isToday(day);
           const dayBookings = eventsOf(day);
-
+          const isSelected = selectedKey === key;
           const count = dayBookings.length;
           const showOverflow = count > SHOW_LIMIT;
 
@@ -295,17 +299,16 @@ export default function MonthCalendarDF({
               }}
               className={[
                 "relative w-full min-h-[100px] rounded-lg border bg-white",
-                today
+                isSelected
+                  ? "border-[var(--bh-gold,#D4AF37)] ring-1 ring-[var(--bh-gold,#D4AF37)]"
+                  : today
                   ? "border-[var(--bh-gold,#D4AF37)] ring-1 ring-[var(--bh-gold,#D4AF37)]"
                   : "border-zinc-200",
-                outMonth && "opacity-50",
+                outMonth && !isSelected && "opacity-50",
                 "focus:outline-none focus:ring-2 focus:ring-[var(--bh-gold,#D4AF37)]",
                 "dark:bg-[#121316] dark:border-[#2A2B31] dark:text-[#EDEFF4]",
               ].join(" ")}
-              style={{
-                touchAction: "manipulation", // 👈 evita delay e “gesto de scroll”
-                WebkitTapHighlightColor: "transparent", // 👈 melhora tap no iOS
-              }}
+              aria-current={today ? "date" : undefined}
             >
               {/* número do dia */}
               <span className="absolute left-1.5 top-1.5 text-xs font-medium text-zinc-700 dark:text-[#D7DBE3]">

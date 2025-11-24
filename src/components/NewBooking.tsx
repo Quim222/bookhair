@@ -187,7 +187,7 @@ export default function NewBooking({ open, onClose, dashboard, date: initialDate
               id="service"
               name="service"
               className="
-                mt-1 w-full rounded-md border p-2 text-sm
+                mt-1 w-full rounded-md border p-2 text-base sm:text-sm
                 bg-white text-gray-800 border-gray-300
                 focus:border-[var(--bh-gold,#D4AF37)] focus:ring-1 focus:ring-[var(--bh-gold,#D4AF37)]
                 dark:bg-[#0B0B0C] dark:text-[#EDEFF4] dark:border-[#2A2B31]
@@ -210,7 +210,7 @@ export default function NewBooking({ open, onClose, dashboard, date: initialDate
               id="employee"
               name="employee"
               className="
-                mt-1 w-full rounded-md border p-2 text-sm
+                mt-1 w-full rounded-md border p-2 text-base sm:text-sm
                 bg-white text-gray-800 border-gray-300
                 focus:border-[var(--bh-gold,#D4AF37)] focus:ring-1 focus:ring-[var(--bh-gold,#D4AF37)]
                 dark:bg-[#0B0B0C] dark:text-[#EDEFF4] dark:border-[#2A2B31]
@@ -237,7 +237,7 @@ export default function NewBooking({ open, onClose, dashboard, date: initialDate
                 type="date"
                 value={date}
                 className="
-                  mt-1 w-full rounded-md border p-2
+                  mt-1 w-full rounded-md border p-2 text-base sm:text-sm
                   bg-white text-gray-800 border-gray-300
                   focus:border-[var(--bh-gold,#D4AF37)] focus:ring-1 focus:ring-[var(--bh-gold,#D4AF37)]
                   dark:bg-[#0B0B0C] dark:text-[#EDEFF4] dark:border-[#2A2B31]
@@ -255,7 +255,7 @@ export default function NewBooking({ open, onClose, dashboard, date: initialDate
                 id="time"
                 className="
                   mt-1 w-full rounded-md border p-2
-                  bg-white text-gray-800 border-gray-300
+                  bg-white text-gray-800 border-gray-300 text-base sm:text-sm
                   focus:border-[var(--bh-gold,#D4AF37)] focus:ring-1 focus:ring-[var(--bh-gold,#D4AF37)]
                   dark:bg-[#0B0B0C] dark:text-[#EDEFF4] dark:border-[#2A2B31]
                 "
@@ -288,7 +288,7 @@ export default function NewBooking({ open, onClose, dashboard, date: initialDate
                     }}
                     placeholder="Pesquisar cliente por nome…"
                     className="
-                      mt-1 w-full rounded-md border p-2 text-sm
+                      mt-1 w-full rounded-md border p-2 text-base sm:text-sm
                       bg-white text-gray-800 border-gray-300
                       focus:border-[var(--bh-gold,#D4AF37)] focus:ring-1 focus:ring-[var(--bh-gold,#D4AF37)]
                       dark:bg-[#0B0B0C] dark:text-[#EDEFF4] dark:border-[#2A2B31]
@@ -340,7 +340,7 @@ export default function NewBooking({ open, onClose, dashboard, date: initialDate
                   value={user?.name ?? ""}
                   readOnly
                   className="
-                    mt-1 w-full rounded-md border p-2 text-sm
+                    mt-1 w-full rounded-md border p-2 text-base sm:text-sm
                     bg-gray-100 text-gray-700 border-gray-300
                     dark:bg-white/5 dark:text-[#EDEFF4] dark:border-[#2A2B31]
                   "
@@ -361,7 +361,7 @@ export default function NewBooking({ open, onClose, dashboard, date: initialDate
                   name="nameClient"
                   placeholder="Nome do cliente"
                   className="
-                    mt-1 w-full rounded-md border p-2 text-sm
+                    mt-1 w-full rounded-md border p-2 text-base sm:text-sm
                     bg-white text-gray-800 border-gray-300
                     focus:border-[var(--bh-gold,#D4AF37)] focus:ring-1 focus:ring-[var(--bh-gold,#D4AF37)]
                     dark:bg-[#0B0B0C] dark:text-[#EDEFF4] dark:border-[#2A2B31]
@@ -379,7 +379,7 @@ export default function NewBooking({ open, onClose, dashboard, date: initialDate
                   name="phoneClient"
                   placeholder="Telefone do cliente"
                   className="
-                    mt-1 w-full rounded-md border p-2 text-sm
+                    mt-1 w-full rounded-md border p-2 text-base sm:text-sm
                     bg-white text-gray-800 border-gray-300
                     focus:border-[var(--bh-gold,#D4AF37)] focus:ring-1 focus:ring-[var(--bh-gold,#D4AF37)]
                     dark:bg-[#0B0B0C] dark:text-[#EDEFF4] dark:border-[#2A2B31]

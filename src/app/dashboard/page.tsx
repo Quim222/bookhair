@@ -199,6 +199,7 @@ export default function DashboardOverview() {
               console.log("Dia clicado:", dayKey);
             }}
             onFilteredChange={handleFilteredChange}
+            selectedDay={selectedDate}
           />
         </div>
 
