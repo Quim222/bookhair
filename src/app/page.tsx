@@ -146,16 +146,19 @@ export default function Home() {
               Se já está pronto para cuidar do seu estilo, agende a sua marcação
               connosco e garanta o seu horário.
             </p>
-            <BounceCta
-              onClick={() => {
-                onBookingClick(true);
-              }}
-              className="
-            inline-block bg-[#D4AF37] text-black font-semibold 
-            px-8 py-3 rounded-full hover:bg-[#B8860B] transition-colors duration-200"
-            >
-              Fazer Marcação
-            </BounceCta>
+            <div className="relative inline-block align-middle overflow-visible pb-3 -mb-1">
+              <BounceCta
+                onClick={() => onBookingClick(true)}
+                className="
+                  inline-flex items-center justify-center
+                  transform-gpu will-change-transform touch-manipulation leading-none select-none
+                  bg-[#D4AF37] text-black font-semibold px-8 py-3 rounded-full
+                  hover:bg-[#B8860B] transition-colors duration-200
+                "
+              >
+                Fazer Marcação
+              </BounceCta>
+            </div>
           </div>
         </section>
       </main>

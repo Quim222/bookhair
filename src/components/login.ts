@@ -80,7 +80,7 @@ export async function register(
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ name, email, password, userRole: "CLIENTE" , phone}),
+      body: JSON.stringify({ name, email, password, userRole: "CLIENTE" , phone, statusUser:"ATIVO"}),
     });
 
     if (res.ok) {
