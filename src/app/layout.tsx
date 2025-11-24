@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Book Hair",
   description: "Your new way to mark your hairstyle",
+  icons:{
+    icon: "/logo.png",
+  }
 };
 
 export default function RootLayout({
