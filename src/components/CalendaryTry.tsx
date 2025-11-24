@@ -284,8 +284,15 @@ export default function MonthCalendarDF({
           return (
             <button
               key={key}
+              type="button"
               onClick={() => onClickDay?.(day)}
               title={`Dia ${format(day, "d MMMM yyyy", { locale: pt })}`}
+              onPointerDown={(e) => {
+                if (e.pointerType === "touch") {
+                  e.preventDefault(); // 👉 impede o click duplicado
+                  onClickDay?.(day);
+                }
+              }}
               className={[
                 "relative w-full min-h-[100px] rounded-lg border bg-white",
                 today
@@ -295,6 +302,10 @@ export default function MonthCalendarDF({
                 "focus:outline-none focus:ring-2 focus:ring-[var(--bh-gold,#D4AF37)]",
                 "dark:bg-[#121316] dark:border-[#2A2B31] dark:text-[#EDEFF4]",
               ].join(" ")}
+              style={{
+                touchAction: "manipulation", // 👈 evita delay e “gesto de scroll”
+                WebkitTapHighlightColor: "transparent", // 👈 melhora tap no iOS
+              }}
             >
               {/* número do dia */}
               <span className="absolute left-1.5 top-1.5 text-xs font-medium text-zinc-700 dark:text-[#D7DBE3]">
