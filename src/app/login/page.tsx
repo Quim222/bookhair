@@ -193,15 +193,6 @@ export default function Page() {
                     Criar conta
                   </button>
                 </p>
-                <p className="text-xs text-zinc-500 text-center">
-                  Ou{" "}
-                  <a
-                    href="/booking?mode=guest"
-                    className="underline hover:text-[--gold]"
-                  >
-                    continuar como convidado
-                  </a>
-                </p>
               </form>
             </div>
           </section>
